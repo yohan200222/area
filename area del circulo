@@ -9,5 +9,4 @@ void main()
 	cin>> r;
 	cout<<r*r*3.14;
 	getch();
-	return 0;
 }
