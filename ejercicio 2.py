@@ -1,3 +1,6 @@
 n= int(input("introduce un numero entero:"))
-suma= n* (n+1)/2
-print("la suma de los primeros enteros desde 1 hasta" + str(n)+"es" +str(suma))
+suma=0
+
+for i in range(1,n+1,1)
+suma=suma+i
+print("la suma es:",suma)
