@@ -1,0 +1,9 @@
+"ejemplo de pila-LIFO"
+Pila = []
+"incluir elementos - push - apilar"
+Pila.append("a")
+Pila.append("b")
+print(Pila)
+"sacar elementos -pop- desapilar"
+x=Pila.pop()
+print(Pila)
