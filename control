@@ -1,0 +1,35 @@
+class Cola:
+    def __init__(self):
+        self.items=[]
+    def encolar(self, x):
+        self.items.append(x)
+    def desencolar(self):
+        try:
+            return self.items.pop(-1)
+        except:
+         raise ValueError
+    def es_vacia(self):
+        return self.items == []
+    def esprimo(self,x):
+        for i in range(2,x):
+            if x % i == 0:
+                
+                return False
+        print("es primo")
+        return True
+
+    
+choi=Cola()
+i = 1
+j = 1
+while (j<=30):
+    if (choi.esprimo(i)):
+        choi.encolar(i)
+        j+= 1
+    i = i+1
+lista = []
+for i in range(len(choi)):
+    if choi % 2 == 0:
+        
+
+
