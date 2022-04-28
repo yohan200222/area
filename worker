@@ -1,0 +1,18 @@
+import os
+
+print ("\nCrear un archivo")
+print ("================")
+
+       
+
+NOMBRE_ARCHIVO = 'worker.txt'
+
+archivo = open(NOMBRE_ARCHIVO, 'w') # abre el archivo datos.txt
+
+archivo.write("""Augusto Carrizales("el cholo") 19/07/2002 6397893 2000\n""")
+archivo.write("""Julian Gomez  09/07/2002 6397893 2500\n""")
+archivo.write("""Giorgi Saucedo 12/12/2002 1234567 10\n""")
+archivo.write("""Marito Saldias 01/01/2002 7856431 5000\n""")
+archivo.write("""Vacatuero 03/08/2002 1298567 1000\n""")
+       
+archivo.close()
