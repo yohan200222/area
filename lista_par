@@ -1,0 +1,77 @@
+"""
+1. Cargar los datos en una lista que sean los numeros pares")
+    print("2. Mover los datos de una lista a una pila")
+    print("3. Contar los elementos de una pila")
+    print("4. Salir")
+"""
+
+
+def par(x):
+    if x % 2 == 0:
+        return True
+
+    return False
+
+
+def lista_pares(lista_datos):
+    pares = []
+    for i in lista_datos:
+        if par(i):
+            pares.append(i)
+
+    return pares
+
+
+def datos(n):
+    lista_datos = []
+    for i in range(n):
+        lista_datos.append(int(input("Digite numero: ")))
+
+    print(f"Ahora la lista es: {lista_pares(lista_datos)}")
+    return lista_pares(lista_datos)
+
+
+def pasar_a_pila(lista):
+    pila = []
+    for i in lista:
+        pila.append(i)
+
+    print(f"La pila con los datos pasados es: {pila}")
+    return pila
+
+
+def contar(pila):
+    return len(pila)
+
+
+def menu():
+    lista = []
+    pila = []
+    print("1. Cargar los datos en una lista que sean los numeros pares")
+    print("2. Mover los datos de una lista a una pila")
+    print("3. Contar los elementos de una pila")
+    print("4. Salir")
+
+    op = int(input("\nSeleccione la opcion: "))
+
+    while op != 4:
+        if op == 1:
+            n = int(input("Digite la cantidad de datos: "))
+            lista = datos(n)
+        elif op == 2:
+            pila = pasar_a_pila(lista)
+        elif op == 3:
+            print(f"La pila tiene {contar(pila)} datos")
+        elif op == 4:
+            print("Chaufa pumba")
+
+        print("\n1. Cargar los datos en una lista que sean los numeros pares")
+        print("2. Mover los datos de una lista a una pila")
+        print("3. Contar los elementos de una pila")
+        print("4. Salir")
+        op = int(input("\nSeleccione la opcion: "))
+
+
+# main
+
+menu()
