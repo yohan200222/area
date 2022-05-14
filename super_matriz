@@ -1,0 +1,108 @@
+"""
+Crear la clase matriz 'copiar' CHECK
+Funcion suma  CHECK
+funcion de intercambiar filas  
+funcion para contar los elementos de la matriz
+"""
+
+def primo(x):
+    if x>1:
+        for i in range(2,x):
+            if x % i == 0:
+                return False
+        return True
+    else:
+        return False
+class Matriz:
+    def __init__(self, filas, columnas):
+        self.filas = filas
+        self.columnas = columnas
+        self.matriz = []
+
+    def rellenar(self):
+        for i in range(self.filas):
+            self.matriz.append([])
+            for j in range(self.columnas):
+                self.matriz[i].append(int(input(f"[{i}][{j}]: ")))
+
+    def mostrar(self):
+        for i in self.matriz:
+            print(i)
+
+    def suma(self, B):
+        if self.filas == B.filas and self.columnas == B.columnas:
+            matriz_sumada = []
+            for i in range(self.filas):
+                matriz_sumada.append([])
+                for j in range(self.columnas):
+                    matriz_sumada[i].append(self.matriz[i][j] + B.matriz[i][j])
+
+            return matriz_sumada
+        else:
+            print("No se puede sumar")
+            return None
+    def resta(self, B):
+        if self.filas == B.filas and self.columnas == B.columnas:
+            matriz_restada = []
+            for i in range(self.filas):
+                matriz_restada.append([])
+                for j in range(self.columnas):
+                    matriz_restada[i].append(self.matriz[i][j] - B.matriz[i][j])
+
+            return matriz_restada
+        else:
+            print("No se puede sumar")
+            return None
+
+    def intercambiar(self):
+        fila1 = int(input("Digite una fila: "))
+        fila2 = int(input("Digite una fila: "))
+
+        self.matriz[fila1], self.matriz[fila2] = self.matriz[fila2], self.matriz[fila1]
+
+    def contar(self):
+        lista = []
+        contador = 0
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                if self.matriz[i][j] > 10:
+                    contador += 1
+                    lista.append(self.matriz[i][j])
+    
+
+        print(contador)
+    
+    def aa(self):
+        contador = 0
+        for i in range(self.filas):
+            for j in range(self.columnas):
+                if primo(self.matriz[i][j]):
+                    contador += 1
+        
+        print(contador)
+                    
+    
+
+
+
+# main
+matriz_a = Matriz(2,2)
+matriz_a.rellenar()
+matriz_a.mostrar()
+print("\n")
+matriz_b = Matriz(2,2)
+matriz_b.rellenar()
+matriz_b.mostrar()
+
+# ==============================
+resta = matriz_a.resta(matriz_b)
+print("\n")
+for i in resta:
+    print(i)
+print("\n")
+
+
+"""matriz_a.mostrar()
+matriz_a.intercambiar()
+matriz_a.mostrar()
+matriz_a.contar()"""
